@@ -3,8 +3,8 @@
 
 My name is Jaclyn.  
 
-- 🔭 I’m currently working on finishing up a masters in decision analytics
-- 🌱 I’m currently learning machine learning and python programming
+- 🔭 I’m currently working on a masters in decision analytics
+- 🌱 I’m learning data egineering, machine learning, and python programming
 
 
 #### Need. More. Content.
