@@ -1,13 +1,14 @@
-### Hi there 👋
+# Hello 👋
+
+## My name is Jaclyn.  
+
+- 🌱 I hold a master's degree in decision analytics
+- 🌱 I work as a data egineer for a US defense contracting firm
+- 🔭 I am pursuing continued learning in advanced mathematics and ops reasearch analysis
+- 🔭 I am also studying machine learning and python programming
 
 
-My name is Jaclyn.  
-
-- 🔭 I’m currently completing a masters in decision analytics
-- 🌱 I’m a data egineer studying machine learning and python programming
-
-
-#### Need. More. Content.
+## Need. More. Content.
 I'm still figuring out the rest :) 
 
 <!--
