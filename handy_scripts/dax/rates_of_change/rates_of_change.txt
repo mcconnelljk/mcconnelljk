@@ -1,0 +1,46 @@
+c_active_proj_mom_difference = 
+VAR thisplatform = AtlassianMetrics_pivot[platform]
+VAR prevdatetime = DATEADD(AtlassianMetrics_pivot[snapshot_date], -1, MONTH)
+VAR prevvalue = 
+CALCULATE(
+    MAX(AtlassianMetrics_pivot[total_active_project_count])
+    ,filter(all(AtlassianMetrics_pivot), AtlassianMetrics_pivot[platform]=thisplatform && AtlassianMetrics_pivot[snapshot_date]=prevdatetime)
+    )
+var difference = AtlassianMetrics_pivot[total_active_project_count] - prevvalue
+RETURN
+if(isblank(prevvalue), blank(), difference)
+
+
+c_active_proj_yoy_difference = 
+VAR thisplatform = AtlassianMetrics_pivot[platform]
+VAR prevdatetime = DATEADD(AtlassianMetrics_pivot[snapshot_date], -12, MONTH)
+VAR prevvalue = 
+CALCULATE(
+    MAX(AtlassianMetrics_pivot[total_active_project_count])
+    ,filter(all(AtlassianMetrics_pivot), AtlassianMetrics_pivot[platform]=thisplatform && AtlassianMetrics_pivot[snapshot_date]=prevdatetime)
+    )
+var difference = AtlassianMetrics_pivot[total_active_project_count] - prevvalue
+RETURN
+if(isblank(prevvalue), blank(), difference)
+
+
+m_active_proj_mom_graph = 
+VAR FirstYear = [m_min_selected_snapshot]
+VAR LastYear = [m_max_selected_snapshot]
+RETURN
+    IF(
+        SELECTEDVALUE(AtlassianMetrics_pivot[snapshot_date]) = FirstYear || SELECTEDVALUE(AtlassianMetrics_pivot[snapshot_date]) = LastYear,
+        SUM(AtlassianMetrics_pivot[c_active_proj_mom_difference]),
+        BLANK()
+    )
+
+
+m_active_proj_yoy_graph = 
+VAR FirstYear = [m_min_selected_snapshot]
+VAR LastYear = [m_max_selected_snapshot]
+RETURN
+    IF(
+        SELECTEDVALUE(AtlassianMetrics_pivot[snapshot_date]) = FirstYear || SELECTEDVALUE(AtlassianMetrics_pivot[snapshot_date]) = LastYear,
+        SUM(AtlassianMetrics_pivot[c_active_proj_yoy_difference]),
+        BLANK()
+    )

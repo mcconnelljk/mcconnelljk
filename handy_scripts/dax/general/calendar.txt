@@ -1,0 +1,30 @@
+_calendar = 
+	ADDCOLUMNS(
+		CALENDAR(date(2021,1,1),today())
+        ,"Date_groupby_month", DATE(YEAR([Date]),MONTH([Date]),1)
+        ,"Date_groupby_month_desc", -DATE(YEAR([Date]),MONTH([Date]),1)
+		/*,"Day_Name",FORMAT([Date],"DDDD")*/
+		/*,"Day_of_week",(WEEKDAY([Date],1))*/
+		,"Day_of_month",DAY([Date])
+		/*,"Week", DATE(YEAR([Date]),MONTH([Date]),DAY([Date]))-(WEEKDAY([Date],1)-1)*/
+		/*,"Week_name", "Week of " & DATE(YEAR([Date]),MONTH([Date]),DAY([Date]))-(WEEKDAY([Date],1)-1)*/
+		,"Week_number", WEEKNUM([Date],1)
+		/*,"Month", DATE(YEAR([Date]),MONTH([Date]),1)*/
+		/*,"Month_name", FORMAT([Date],"MMMM")*/
+		,"Month_number", MONTH([Date])
+        ,"Month_name_sort", FORMAT([Date],"MM") &" - " & FORMAT([Date],"MMM")
+		,"Year_month",  YEAR([Date]) & " " & FORMAT([Date],"MMM")
+		/*,"Month_year_name_sort", (100*(YEAR([Date]))) + FORMAT([Date],"MM")*/
+		/*,"Quarter",DATE(YEAR([Date]),SWITCH(ROUNDUP(DIVIDE(MONTH([Date]),3,1),0),1,1,2,4,3,7,4,10),1)*/
+		,"Quarter_name", "Q" & ROUNDUP(MONTH([Date])/3,0)
+		/*,"Quarter_year_name", "Q" & ROUNDUP(MONTH([Date])/3,0) & " " & YEAR([Date])*/
+		/*,"Year", DATE(YEAR([Date]),1,1)*/
+		, "Year_digit", YEAR([Date])
+		, "Fiscal_date", date(IF(MONTH([Date]) >= 4, YEAR([Date]) + 1, YEAR([Date])), MONTH([Date]), DAY([Date]))
+        , "Fiscal_year", IF(MONTH([Date]) >= 4, YEAR([Date]) + 1, YEAR([Date])) & " (FY)"
+        , "Fiscal_year_month", IF(MONTH([Date]) >= 4, YEAR([Date]) + 1, YEAR([Date])) & " " & FORMAT([Date],"MMM")
+        /*, "Fiscal_month_name_sort", 100*(IF(MONTH([Date]) >= 4, YEAR([Date]) + 1, YEAR([Date]))) + FORMAT([Date],"MM")*/
+        /*, "Fiscal_qtr_number", IF(MONTH([Date]) >= 10, 3, IF(MONTH([Date]) >= 7, 2, IF(MONTH([Date]) >= 4, 1, 4)))*/
+        , "Fiscal_qtr_name", "Q" & IF(MONTH([Date]) >= 10, 3, IF(MONTH([Date]) >= 7, 2, IF(MONTH([Date]) >= 4, 1, 4)))
+        , "Fiscal_qtr_year_name", IF(MONTH([Date]) >= 4, YEAR([Date]) + 1, YEAR([Date])) & " " & "Q" & IF(MONTH([Date]) >= 10, 3, IF(MONTH([Date]) >= 7, 2, IF(MONTH([Date]) >= 4, 1, 4)))
+        )
