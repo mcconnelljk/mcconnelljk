@@ -3,7 +3,7 @@
 ## My name is Jaclyn
 
 - 🌱 I hold a master's degree in decision analytics
-- 🌱 I work as a data analytics engineer for a US defense contracting firm
+- 🌱 I work as a data (analytics) engineer for a US defense contracting firm
 - 🔭 I am perpetually pursuing continued learning in mathematics and computational thinking
 - 🔭 I am also interested in cognitive science and neuroscience
 - ⚡ My principal goal is to engineer intelligent (learning) systems
