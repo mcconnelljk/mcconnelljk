@@ -20,8 +20,9 @@ Type 2 SCD tracks historical changes to dimension attributes by **creating a n
 | **IsCurrent**         | Flag indicating the latest version.           |
 
 ## Example placeholders
-- **Python implementation** – see [target_metric_map >>](./target_metric_map.py) for a pandas‑based approach that detects changes and appends versioned rows.  
-- **SQL implementation** – see [transitions_matrix >>](./transitions_matrix.md) for a two‑step T‑SQL routine that first builds a transitions matrix and then collapses it into an SCD‑Type 2 table with proper date ranges and an `is_current` flag.
+- **Python implementation** – see [target_metric_map >> ](./target_metric_map.py) for a pandas‑based approach that detects changes and appends versioned rows.  
+
+- **SQL implementation** – see [transitions_matrix >> ](./transitions_matrix/README.md) for a two‑step T‑SQL routine that first builds a transitions matrix and then collapses it into an SCD‑Type 2 table with proper date ranges and an `is_current` flag.
 
 ---  
 
