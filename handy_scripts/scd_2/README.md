@@ -1,13 +1,13 @@
 # Slowly Changing Dimensions – Type 2
 
 ## Purpose
-Type 2 SCD tracks historical changes to dimension attributes by **creating a new row** whenever a value changes.  
+The Type 2 SCD tracks historical changes to dimension attributes by *creating a new row entry* whenever a value changes.  
 - Preserves the original record (past state)
 - Adds a versioned row with the new value and effective dates (or a current‑flag)  
 - Enables accurate “as‑of” reporting and audit trails without overwriting history.
 
 ## When to use
-- When business decisions depend on the state of an attribute at a specific point in time (e.g., customer address, product category).  
+- When decisions depend on the state of an attribute at a specific point in time (e.g., customer address, product category).  
 - When you need to analyze trends while retaining the full change history.  
 
 ## Typical structure

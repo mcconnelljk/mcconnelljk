@@ -20,8 +20,8 @@ To empower the autonomy of individuals, organizations, and communities through t
 
 ## My Portfolio
 
-- ✨[Handy Scripts >>](./handy_scripts/README.md) - Fun 'puzzles' that I've solved in the wild
-- ✨[SWaM Search >>](https://github.com/mcconnelljk/SWaM_Search) - Final capstone project for completing my Master's degree; an application built on top of an ML pipeline (there's a video demo)
+- ✨[Handy Scripts >>](./handy_scripts/README.md)  Fun 'puzzles' that I've solved in the wild
+- ✨[SWaM Search >>](https://github.com/mcconnelljk/SWaM_Search)  Final capstone project for completing my Master's degree; an application built on top of an ML pipeline (there's a video demo)
 
 <!--
 **mcconnelljk/mcconnelljk** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
